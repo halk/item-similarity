@@ -1,0 +1,38 @@
+{
+    "name": "halk/item-similarity",
+    "description": "Content-based, schema-less recommendation service",
+    "version": "0.1.0",
+    "type": "library",
+    "keywords": ["recommender", "content-based filtering", "recommendation engine"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Halil Köklü",
+            "email": "halil@koklu.me",
+            "homepage": "www.halilkoklu.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "halil@koklu.me",
+        "issues": "https://github.com/halk/item-similarity/issues",
+        "source": "https://github.com/halk/item-similarity"
+    },
+    "require": {
+        "php": ">=5.5",
+        "silex/silex": "~1.3",
+        "neutron/mongo-odm-silex-provider": "0.1.3",
+        "doctrine/mongodb-odm": "1.0.0-BETA13",
+        "monolog/monolog": "^1.15"
+    },
+    "require-dev": {
+        "symfony/browser-kit": "^2.7",
+        "symfony/css-selector": "^2.7",
+        "phpunit/phpunit": "4.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Koklu": "src/"
+        }
+    }
+}

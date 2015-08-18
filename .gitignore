@@ -1,0 +1,11 @@
+.idea
+.DS_Store
+
+/cache
+/composer.lock
+/config/config.php
+/log/*
+!/log/.gitkeep
+/phpunit.xml
+/vendor
+/web/cache
