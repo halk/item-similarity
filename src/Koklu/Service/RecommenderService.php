@@ -39,24 +39,18 @@ class RecommenderService
      */
     public function post($itemId, array $data, $collection = null)
     {
-        $item = $this->_itemManager->get($itemId, $collection);
-        if ($item) {
-            $this->delete($item, $collection);
-        }
-
+        $this->delete($itemId, $collection);
         $item = $this->_itemManager->post($itemId, $data);
         $this->_recommender->onPost($item);
     }
 
     /**
-     * @param string|Item $item
+     * @param string      $itemId
      * @param string|null $collection
      */
-    public function delete($item, $collection = null)
+    public function delete($itemId, $collection = null)
     {
-        if (is_string($item)) {
-            $item = $this->_itemManager->get($item, $collection);
-        }
+        $item = $this->_itemManager->get($itemId, $collection);
         if ($item) {
             $this->_itemManager->delete($item, $collection);
             $this->_recommender->onDelete($item);
