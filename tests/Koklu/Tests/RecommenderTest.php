@@ -92,8 +92,8 @@ class RecommenderTest extends WebTestCase
         $recommendations = $this->_getRecommendation(['item1']);
         $this->assertEquals(['item2' => 0.5, 'item3' => 0.2, 'item4' => 0.2], $recommendations);
 
-        $recommendations = $this->_getRecommendation(['item1'], 2);
-        $this->assertEquals(['item2' => 0.5, 'item3' => 0.2], $recommendations);
+        $recommendations = $this->_getRecommendation(['item1'], 1);
+        $this->assertEquals(['item2' => 0.5], $recommendations);
     }
 
     public function testCommaSeparatedValues()
