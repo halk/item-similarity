@@ -15,9 +15,9 @@ class ItemRepository extends DocumentRepository
     public function getAllItemsExcept(Item $item)
     {
         return $this->createQueryBuilder()
-             ->field('id')->notEqual($item->getId())
-             ->getQuery()
-             ->execute();
+                ->field('id')->notEqual($item->getId())
+                ->getQuery()
+                ->execute();
     }
 
     /**
