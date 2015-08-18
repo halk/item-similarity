@@ -8,11 +8,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 // set assertion rule to all routes
 $app['controllers']
-  ->assert('collection', '[\w_]+')
-  ->assert('itemId', '[[:ascii:]]+');
+    ->assert('collection', '[\w_]+')
+    ->assert('itemId', '[[:ascii:]]+');
 
 // decode json if content type is json
-$app->before(function (Request $request) use ($app) {
+$app->before(function(Request $request) use ($app) {
     if (strpos($request->headers->get('Content-Type'), 'application/json') === 0) {
         $data = json_decode($request->getContent(), true);
         $request->request->replace(is_array($data) ? $data : []);
@@ -20,12 +20,12 @@ $app->before(function (Request $request) use ($app) {
 });
 
 // index
-$app->get('/', function () {
+$app->get('/', function() {
     return 'Welcome to the Item Similarity Recommender';
 });
 
 // adding / updating
-$app->post('{collection}', function (Application $app, Request $request, $collection) {
+$app->post('{collection}', function(Application $app, Request $request, $collection) {
     $itemId = $request->request->get('item_id');
     $attributes = $request->request->get('attributes');
 
@@ -35,13 +35,13 @@ $app->post('{collection}', function (Application $app, Request $request, $collec
 });
 
 // deleting
-$app->delete('{collection}/{itemId}', function (Application $app, $collection, $itemId) {
+$app->delete('{collection}/{itemId}', function(Application $app, $collection, $itemId) {
     $app['koklu.recommender']->delete($itemId, $collection);
     return new Response('', 204);
 });
 
 // recommending
-$app->get('{collection}', function (Application $app, Request $request, $collection) {
+$app->get('{collection}', function(Application $app, Request $request, $collection) {
     $itemIds = $request->query->get('itemIds');
     $limit = $request->query->get('limit', false);
     $recommendations = $app['koklu.recommender']->recommend($itemIds, $collection, $limit);
