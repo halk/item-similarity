@@ -13,6 +13,7 @@ services: mongodb
 before_script:
   - yes '' | pecl -q install -f mongo-${MONGO_VERSION} && echo "extension=mongo.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
   - composer install --dev
+  - cp config/config.php.dist config/config.php
 
 script:
     - phpunit --coverage-clover=coverage.clover

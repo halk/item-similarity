@@ -1,5 +1,7 @@
 # Item Similarity: content-based, schema-less recommendation service
 
+[![Build Status](https://travis-ci.org/halk/item-similarity.svg?branch=master)](https://travis-ci.org/halk/item-similarity)
+
 A simple recommendation service which computes the similarity of items. Since
 this is part of my MSc project, I am currently spending more time on getting the
 thesis right, I will enrich the documentation here.
