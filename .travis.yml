@@ -1,0 +1,18 @@
+language: php
+
+php:
+    - 5.5
+    - 5.6
+    - 7
+
+env:
+  - MONGO_VERSION=stable
+
+services: mongodb
+
+before_script:
+  - yes '' | pecl -q install -f mongo-${MONGO_VERSION} && echo "extension=mongo.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+  - composer install --dev
+
+script:
+    - phpunit --coverage-clover=coverage.clover
