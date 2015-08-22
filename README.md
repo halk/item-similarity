@@ -1,11 +1,12 @@
-# Item Similarity: content-based, schema-less recommendation service
-
 [![Build Status](https://travis-ci.org/halk/item-similarity.svg?branch=master)](https://travis-ci.org/halk/item-similarity)
 [![Code Coverage](https://scrutinizer-ci.com/g/halk/item-similarity/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/halk/item-similarity/?branch=master)
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/halk/item-similarity/blob/master/LICENSE)
 
-A simple recommendation service which computes the similarity of items. Since
-this is part of my MSc project, I am currently spending more time on getting the
-thesis right, I will enrich the documentation here.
+# Item Similarity: content-based, schema-less recommendation service
+
+A simple recommendation service which computes the similarity of items.
+
+Since this is part of my ongoing [MSc project](https://github.com/halk/msc-project-report), README will be improved by October.
 
 ## Concept
 
@@ -93,7 +94,7 @@ $ cd item-similarity
 $ cp config/config.php.dist config/config.php
 ```
 
-Please see the MSc project repository for provisioning.
+Please see [recowise-vagrant](https://github.com/halk/recowise-vagrant) for provisioning details.
 
 ## Tests
 
